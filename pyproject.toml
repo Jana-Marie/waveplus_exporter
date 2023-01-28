@@ -5,7 +5,9 @@ description = "Prometheus exporter for waveplus environment sensor"
 authors = ["Jana-Marie <janamarie@janamarie.dev>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "waveplus_exporter.py"}]
+
+[tool.poetry.scripts]
+waveplus-exporter = "waveplus_exporter:run"
 
 [tool.poetry.dependencies]
 python = "^3.8"

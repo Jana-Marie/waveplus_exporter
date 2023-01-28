@@ -209,15 +209,16 @@ class Sensors():
     def getUnit(self, sensor_index):
         return self.sensor_units[sensor_index]
 
-try:
-    waveplus = WavePlus(SerialNumber)
-    REGISTRY.register(waveplus)
+def run():
+    try:
+        waveplus = WavePlus(SerialNumber)
+        REGISTRY.register(waveplus)
 
-    start_http_server(int(args.port), addr=args.bind)
-    log.info('listening on http://%s:%d/metrics', args.bind, int(args.port))
+        start_http_server(int(args.port), addr=args.bind)
+        log.info('listening on http://%s:%d/metrics', args.bind, int(args.port))
 
-    while True:
-        time.sleep(SamplePeriod)
+        while True:
+            time.sleep(SamplePeriod)
 
-finally:
-    waveplus.disconnect()
+    finally:
+        waveplus.disconnect()
