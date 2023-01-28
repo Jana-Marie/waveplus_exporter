@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "waveplus-exporter"
+version = "0.1.0"
+description = "Prometheus exporter for waveplus environment sensor"
+authors = ["Jana-Marie <janamarie@janamarie.dev>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "waveplus_exporter.py"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bluepy = "^1.3.0"
+prometheus-client = "^0.16.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
